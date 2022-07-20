@@ -21,7 +21,7 @@
                                    Margin="0,0,-5,0"/>
 
                                 <Label Content="{Binding Time}"
-                                   Foreground="Blue"
+                                   Foreground="Gray"
                                    FontWeight="SemiBold"
                                    FontSize="8"
                                    VerticalAlignment="Center"/>

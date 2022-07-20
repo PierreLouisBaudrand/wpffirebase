@@ -25,3 +25,15 @@ C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\obj\Debug\net5.0-windows\T
 C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\obj\Debug\net5.0-windows\Themes\MessageBox.baml
 C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\obj\Debug\net5.0-windows\App.baml
 C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\obj\Debug\net5.0-windows\Themes\ContactCard.baml
+C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\bin\Debug\net5.0-windows\Firebase.dll
+C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\bin\Debug\net5.0-windows\LiteDB.dll
+C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
+C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\bin\Debug\net5.0-windows\System.Reactive.dll
+C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\bin\Debug\net5.0-windows\System.Runtime.InteropServices.WindowsRuntime.dll
+C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\obj\Debug\net5.0-windows\FirebaseChat.csproj.CopyComplete
+C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\bin\Debug\net5.0-windows\FireSharp.dll
+C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\bin\Debug\net5.0-windows\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\bin\Debug\net5.0-windows\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\bin\Debug\net5.0-windows\Microsoft.Threading.Tasks.dll
+C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\bin\Debug\net5.0-windows\System.Net.Http.Extensions.dll
+C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\bin\Debug\net5.0-windows\System.Net.Http.Primitives.dll
