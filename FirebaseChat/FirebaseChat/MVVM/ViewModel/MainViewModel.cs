@@ -11,14 +11,15 @@ using Firebase.Database.Query;
 using FireSharp.Config;
 using FireSharp.Response;
 using FireSharp.Interfaces;
+using System.Windows.Threading;
 
 namespace FirebaseChat.MVVM.ViewModel
 {
     class MainViewModel : ObservableObject
     {
         //Connexion FireBase
-        public IFirebaseClient fclient;
-        public FirebaseClient firebaseClient;
+        IFirebaseClient fclient;
+        FirebaseClient firebaseClient;
 
         //Variables
         public string username = "pierre";
@@ -30,7 +31,7 @@ namespace FirebaseChat.MVVM.ViewModel
         //Affichage
         public ObservableCollection<MessageModel> Messages { get; set; }
         public ObservableCollection<ContactModel> Contacts { get; set; }
-        
+
         public ContactModel SelectedContact
         {
             get { return _selectedcontact; }
@@ -55,12 +56,12 @@ namespace FirebaseChat.MVVM.ViewModel
             {
                 var msg = new MessageModel
                 {
-                    Username = "Chat Limayrac",
+                    Username = username,
                     UsernameColor = "#409aff",
-                    ImageSource = "",
+                    ImageSource = "./Icons/limayraclogo.png",
                     MessageTxt = Message,
                     Time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"),
-                    IsNativeOrigin = false,
+                    IsNativeOrigin = true,
                     IsFirstMessage = true
                 };
                 var setter = fclient.Set("Messages/" + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss").Replace('/', '-'), msg);
@@ -83,6 +84,41 @@ namespace FirebaseChat.MVVM.ViewModel
                   AuthTokenAsyncFactory = () => Task.FromResult(auth)
               });
 
+            //Data Stream
+            var observable = firebaseClient.Child("Messages").AsObservable<MessageModel>().Subscribe
+                (d => App.Current.Dispatcher.Invoke((System.Action)delegate
+                {
+                    if (d.Object.ImageSource != "")
+                    {
+                        //BitmapImage image = generateImageSource(d.Object.ImageSource);
+                    
+                        Messages.Add(new MessageModel
+                        {
+                            Username = d.Object.Username,
+                            UsernameColor = d.Object.UsernameColor,
+                            ImageSource = d.Object.ImageSource,
+                            //PictureImage = image,
+                            MessageTxt = d.Object.MessageTxt,
+                            Time = d.Object.Time,
+                            IsNativeOrigin = false,
+                            IsFirstMessage = true
+                        });
+                    }
+                    else
+                    {
+                        Messages.Add(new MessageModel
+                        {
+                            Username = d.Object.Username,
+                            UsernameColor = d.Object.UsernameColor,
+                            //ImageSource = d.Object.ImageSource,
+                            MessageTxt = d.Object.MessageTxt,
+                            Time = d.Object.Time,
+                            IsNativeOrigin = false,
+                            IsFirstMessage = true
+                        });
+                    }
+                }));
+
             try
             {
                 fclient = new FireSharp.FirebaseClient(fcon);
@@ -98,34 +134,8 @@ namespace FirebaseChat.MVVM.ViewModel
             SendCommand = new RelayCommand(o =>
             {
                 PostMsgFirebase();
-                //Messages.Add(msg);
                 Message = "";
             });
-
-            Messages.Add(new MessageModel
-            {
-                Username = "Chat Limayrac",
-                UsernameColor = "#409aff",
-                ImageSource = "./Icons/limayraclogo.png",
-                MessageTxt = "Test",
-                Time = DateTime.Now.ToString(),
-                IsNativeOrigin = false,
-                IsFirstMessage = true
-            });
-
-            for (int i = 0; i < 3; i++)
-            {
-                Messages.Add(new MessageModel
-                {
-                    Username = "Chat Limayrac",
-                    UsernameColor = "#409aff",
-                    ImageSource = "./Icons/limayraclogo.png",
-                    MessageTxt = "Test",
-                    Time = DateTime.Now.ToString(),
-                    IsNativeOrigin = false,
-                    IsFirstMessage = false
-                });
-            }
 
             Contacts.Add(new ContactModel
             {
