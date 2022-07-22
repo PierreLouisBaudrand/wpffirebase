@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FirebaseChat.MVVM.Model
 {
-    class ContactModel
+    public class ContactModel
     {
         public string Username { get; set; }
         public string ImageSource { get; set; }

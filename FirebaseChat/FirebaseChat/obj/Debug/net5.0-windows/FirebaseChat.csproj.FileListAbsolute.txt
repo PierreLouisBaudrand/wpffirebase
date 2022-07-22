@@ -37,3 +37,9 @@ C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\bin\Debug\net5.0-windows\M
 C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\bin\Debug\net5.0-windows\Microsoft.Threading.Tasks.dll
 C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\bin\Debug\net5.0-windows\System.Net.Http.Extensions.dll
 C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\bin\Debug\net5.0-windows\System.Net.Http.Primitives.dll
+C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\obj\Debug\net5.0-windows\Login.g.cs
+C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\obj\Debug\net5.0-windows\Login.baml
+C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\obj\Debug\net5.0-windows\Pages\PageLogin.g.cs
+C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\obj\Debug\net5.0-windows\Pages\PageRegister.g.cs
+C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\obj\Debug\net5.0-windows\Pages\PageLogin.baml
+C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\obj\Debug\net5.0-windows\Pages\PageRegister.baml

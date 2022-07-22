@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\App.xaml
-4351067607
+7523232606
 
-10-2138986982
+14-1668056975
 204709118661
-MainWindow.xaml;Themes\ChatItem.xaml;Themes\ContactCard.xaml;Themes\MessageBox.xaml;
+Login.xaml;MainWindow.xaml;Pages\PageLogin.xaml;Pages\PageRegister.xaml;Themes\ChatItem.xaml;Themes\ContactCard.xaml;Themes\MessageBox.xaml;
 
-False
+True
 

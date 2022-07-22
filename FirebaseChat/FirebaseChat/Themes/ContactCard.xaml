@@ -3,11 +3,11 @@
     <Style TargetType="ListViewItem" x:Key="ContactCard">
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Background" Value="#292b2f"/>
+                <Setter Property="Background" Value="#236bac"/>
             </Trigger>
         </Style.Triggers>
 
-        <Setter Property="Background" Value="#393B40"/>
+        <Setter Property="Background" Value="#6dabe4"/>
 
         <Setter Property="Template">
             <Setter.Value>
@@ -26,9 +26,9 @@
                             <StackPanel>
                                 <Label Content="{Binding Username}"
                                        Foreground="White"/>
-                                <Label Content="{Binding LastMessage}"
+                                <Label Content=""
                                        FontSize="10"
-                                       Foreground="Gray"/>
+                                       Foreground="White"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>

@@ -1,0 +1,90 @@
+﻿<Window x:Class="FirebaseChat.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FirebaseChat"
+        mc:Ignorable="d"
+        Height="400" Width="300"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition  Height="40"/>
+            <RowDefinition/>
+            <RowDefinition  Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Border Background="#236bac"
+                MouseDown="Border_MouseDown">
+
+            <Grid HorizontalAlignment="Stretch">
+                <Label Content="Login / Register" 
+                       Foreground="White" 
+                       FontWeight="SemiBold"/>
+                <StackPanel HorizontalAlignment="Right" 
+                            Orientation="Horizontal">
+                    <Button Width="20" 
+                            Height="20" 
+                            Content="🗕" 
+                            Background="Transparent" 
+                            BorderThickness="0"
+                            FontWeight="Bold"
+                            Foreground="White"
+                            Click="ButtonMinimize_Click"/>
+
+                    <Button Width="20" 
+                            Height="20" 
+                            Content="□" 
+                            Background="Transparent" 
+                            BorderThickness="0"
+                            FontWeight="Bold"
+                            Foreground="White"
+                            Click="WindowStateButton_Click"/>
+
+                    <Button Width="20" 
+                            Height="20" 
+                            Content="X" 
+                            Background="Transparent" 
+                            BorderThickness="0"
+                            FontWeight="Bold"
+                            Foreground="White"
+                            Click="CloseButton_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Grid Grid.Row="1" 
+              Background="#498bc7">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="9*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Background="#6dabe4" 
+                    Width="80" Height="20"
+                    BorderThickness="0"
+                    Content="Connexion"
+                    Foreground="White"
+                    Margin="60,10,130,10" Click="GoToLogin_clicked"/>
+            <Button Background="#6dabe4" 
+                    Width="80" Height="20"
+                    BorderThickness="0"
+                    Content="S'enregistrer"
+                    Foreground="White"
+                    Margin="160,10,30,10" Click="GoToRegister_clicked"/>
+        </Grid>
+        <Border BorderBrush="#236bac" 
+                Grid.Row="2"
+                BorderThickness="2,2,2,2">
+            <Grid Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                <Frame x:Name="MainLogin" 
+                       NavigationUIVisibility="Hidden"/>
+            </Grid>
+        </Border>
+        <Grid Grid.Row="3"
+              Background="#498bc7">
+
+        </Grid>
+    </Grid>
+</Window>

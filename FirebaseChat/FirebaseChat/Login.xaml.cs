@@ -1,5 +1,4 @@
-﻿using FirebaseChat.MVVM.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,20 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace FirebaseChat
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logique d'interaction pour Login.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Login : Window
     {
-        public MainWindow()
+        PageLogin pageLog = new PageLogin();
+        PageRegister pageReg = new PageRegister();
+
+        public Login()
         {
             InitializeComponent();
+            MainLogin.Content = new PageLogin();
         }
+
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -35,36 +38,33 @@ namespace FirebaseChat
 
         private void ButtonMinimize_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.MainWindow.WindowState = WindowState.Minimized;
+            //Finir Minimize
         }
 
         private void WindowStateButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Application.Current.MainWindow.WindowState != WindowState.Maximized)
-            {
-                Application.Current.MainWindow.WindowState = WindowState.Maximized;
-            }
-            else
-            {
-
-                Application.Current.MainWindow.WindowState = WindowState.Normal;
-            }
+            //Pas de Plein Ecran
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            Close();
         }
 
-        private void Enter_clicked(object sender, MouseButtonEventArgs e)
+        private void GoToLogin_clicked(object sender, RoutedEventArgs e)
         {
-            //Finir
+            if (MainLogin.Content != pageLog)
+            {
+                MainLogin.Content = pageLog;
+            }
         }
 
-        private void Connexion_clicked(object sender, RoutedEventArgs e)
+        private void GoToRegister_clicked(object sender, RoutedEventArgs e)
         {
-            Login log = new Login();
-            log.ShowDialog();
+            if (MainLogin.Content != pageReg)
+            {
+                MainLogin.Content = pageReg;
+            }
         }
     }
 }

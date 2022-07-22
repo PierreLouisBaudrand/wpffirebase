@@ -9,7 +9,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="TextBox">
                     <Border CornerRadius="8"
-                            Background="#3e4147">
+                            Background="#498bc7">
                         <Grid>
                             <TextBox VerticalAlignment="Stretch"
                                      VerticalContentAlignment="Center"
@@ -18,8 +18,8 @@
                                      Background="Transparent"
                                      TextWrapping="Wrap"
                                      BorderThickness="0"
-                                     Foreground="Gray"
-                                     CaretBrush="Gray"
+                                     Foreground="White"
+                                     CaretBrush="#498bc7"
                                      Margin="8,0,0,0"
                                      Text="{Binding Message, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                 <TextBox.InputBindings>

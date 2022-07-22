@@ -27,7 +27,7 @@
                                    VerticalAlignment="Center"/>
                             </StackPanel>
                             <Label Content="{Binding MessageTxt}"
-                                   Foreground="White"
+                                   Foreground="Black"
                                    FontWeight="SemiBold"
                                    VerticalAlignment="Center"/>
                         </StackPanel>

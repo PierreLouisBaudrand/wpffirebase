@@ -26,12 +26,12 @@
         </Grid.ColumnDefinitions>
 
         <Border Grid.ColumnSpan="2" 
-                Background="#252525"
+                Background="#236bac"
                 MouseDown="Border_MouseDown">
 
             <Grid HorizontalAlignment="Stretch">
                 <Label Content="Firebase Chat" 
-                       Foreground="Gray" 
+                       Foreground="White" 
                        FontWeight="SemiBold"/>
                 <StackPanel HorizontalAlignment="Right" 
                             Orientation="Horizontal">
@@ -42,7 +42,7 @@
                             Background="Transparent" 
                             BorderThickness="0"
                             FontWeight="Bold"
-                            Foreground="Gray"
+                            Foreground="White"
                             Click="ButtonMinimize_Click"/>
 
                     <Button Width="20" 
@@ -51,7 +51,7 @@
                             Background="Transparent" 
                             BorderThickness="0"
                             FontWeight="Bold"
-                            Foreground="Gray"
+                            Foreground="White"
                             Click="WindowStateButton_Click"/>
 
                     <Button Width="20" 
@@ -60,25 +60,26 @@
                             Background="Transparent" 
                             BorderThickness="0"
                             FontWeight="Bold"
-                            Foreground="Gray"
+                            Foreground="White"
                             Click="CloseButton_Click"/>
                 </StackPanel>
             </Grid>
         </Border>
-
-        <Grid Background="#2f3136"
+        
+        <Grid Background="#498bc7"
               Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
                 <RowDefinition/>
                 <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
-
+            
             <Label Content="Channel"
                    VerticalAlignment="Center"
                    FontWeight="Medium"
-                   Foreground="Gray"
+                   Foreground="White"
                    Margin="8,0,0,0"/>
+            
             <ListView ItemsSource="{Binding Contacts}"
                       SelectedItem="{Binding SelectedContact}"
                       Background="Transparent"
@@ -89,36 +90,54 @@
             </ListView>
             <StackPanel Grid.Row="2"
                         Orientation="Horizontal"
-                        Background="#292b2f">
-                <Border CornerRadius="25"
-                        Width="30" Height="30"
+                        Background="#236bac">
+                <Border x:Name="ConnectColor"
+                        CornerRadius="25"
+                        Width="20" Height="20"
                         Background="#3bff6f"
                         Margin="18,0,0,0"/>
                 <StackPanel VerticalAlignment="Center">
-                    <Label Content="Username"
+                    <Label x:Name="UsernameBox"
+                           Content="Username"
                            Foreground="White"
                            FontWeight="SemiBold"
                            Margin="0,-5,0,-5"/>
-                    <Label Content="Custom Status"
-                           Foreground="Gray"
+                    <Label x:Name="ConnectStatus"
+                           Content="Connecté"
+                           Foreground="LightGray"
                            FontWeight="SemiBold"
                            FontSize="10"
                            Margin="0,-8,0,-5"/>
                 </StackPanel>
+                <Label x:Name="ConnectMail"
+                       Content=""
+                       Visibility="Hidden"
+                       Width="0"
+                       Height="0"/>
+                <Button x:Name="ConnectButton" 
+                        Content="Connexion"
+                        Foreground="White"
+                        HorizontalAlignment="Right"
+                        FontWeight="SemiBold"
+                        Margin="10" 
+                        Height="25" Width="80"
+                        Background="#6dabe4"
+                        BorderBrush="Transparent" Click="Connexion_clicked"/>
             </StackPanel>
         </Grid>
 
         <Grid Grid.Column="1"
               Grid.Row="1"
-              Background="#313439">
+              Background="White">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
                 <RowDefinition/>
                 <RowDefinition Height="70"/>
             </Grid.RowDefinitions>
 
-            <Border BorderBrush="#2f3136"
-                    BorderThickness="0,0,0,2">
+            <Border BorderBrush="#236bac"
+                    BorderThickness="0,0,0,2"
+                    Background="#498bc7">
                 <Grid HorizontalAlignment="Stretch"
                       Margin="8">
                     <Label Content="@Username"
@@ -128,40 +147,49 @@
                            VerticalAlignment="Center"/>
                 </Grid>
             </Border>
-
-            <ListView ItemsSource="{Binding SelectedContact.Messages}"
+            <Border BorderBrush="#236bac"
+                    BorderThickness="2,0,0,0"
+                    Background="Transparent"
+                    Grid.Row="1">
+                <ListView ItemsSource="{Binding SelectedContact.Messages}"
                       Background="Transparent"
                       BorderThickness="0"
                       ItemContainerStyle="{StaticResource ChatItem}"
                       Margin="8,0,0,0"
                       Grid.Row="1"
                       x:Name="ListMessageTxt">
-            </ListView>
+                </ListView>
+            </Border>
 
-            <Grid Grid.Row="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="90"/>
-                </Grid.ColumnDefinitions>
-                <TextBox Grid.Row="1"
+            <Border BorderBrush="#236bac"
+                    BorderThickness="2,0,0,0"
+                    Background="Transparent"
+                    Grid.Row="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="90"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Row="1"
                          Height="50"
                          Text="Message @Username"
                          Style="{StaticResource MessageBox}"
                          Grid.ColumnSpan="2"/>
-                <StackPanel Orientation="Horizontal"
+                    <StackPanel Orientation="Horizontal"
                             HorizontalAlignment="Right"
                             Grid.Column="1"
                             Margin="0,0,16,0">
-                    <Image Source="./Icons/plus.png"
+                        <Image Source="./Icons/plus.png"
                            Width="20" Height="20"
                            RenderOptions.BitmapScalingMode="Fant"
                            Margin="5,5,5,0"/>
-                    <Image Source="./Icons/send.png"
+                        <Image Source="./Icons/send.png"
                            Width="20" Height="20"
                            RenderOptions.BitmapScalingMode="Fant"
-                           Margin="5,5,16,0"/>
-                </StackPanel>
-            </Grid>
+                           Margin="5,5,16,0" MouseDown="Enter_clicked"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
         </Grid>
     </Grid>
 

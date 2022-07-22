@@ -15,7 +15,7 @@ using System.Windows.Threading;
 
 namespace FirebaseChat.MVVM.ViewModel
 {
-    class MainViewModel : ObservableObject
+     public class MainViewModel : ObservableObject
     {
         //Connexion FireBase
         IFirebaseClient fclient;
@@ -64,7 +64,7 @@ namespace FirebaseChat.MVVM.ViewModel
                     IsNativeOrigin = true,
                     IsFirstMessage = true
                 };
-                var setter = fclient.Set("Messages/" + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss").Replace('/', '-'), msg);
+                var setter = fclient.Set("Messages/" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), msg);
             }
         }
 
@@ -110,7 +110,7 @@ namespace FirebaseChat.MVVM.ViewModel
                         {
                             Username = d.Object.Username,
                             UsernameColor = d.Object.UsernameColor,
-                            //ImageSource = d.Object.ImageSource,
+                            ImageSource = d.Object.ImageSource,
                             MessageTxt = d.Object.MessageTxt,
                             Time = d.Object.Time,
                             IsNativeOrigin = false,
