@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "CdvoxBgsdwPGcnINZU77gcttyeIp9Q5rurl6s69CG2QiivHRfFaz19jYqkfbkwodO8Y6KLsUR+Wi9TpoPodX+w==",
+  "dgSpecHash": "UYSGgVu/yiYHw5ti48yfk5kGuhZR/g67w0gTCqxJgEm0q2GphYPlSdBLxd6HpSFFN5ljqaEkuQ7kl2iuZSnvxA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Spamm\\source\\repos\\FirebaseChat\\FirebaseChat\\FirebaseChat.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Spamm\\.nuget\\packages\\extended.wpf.toolkit\\4.3.0\\extended.wpf.toolkit.4.3.0.nupkg.sha512",
     "C:\\Users\\Spamm\\.nuget\\packages\\firebasedatabase.net\\4.0.7\\firebasedatabase.net.4.0.7.nupkg.sha512",
     "C:\\Users\\Spamm\\.nuget\\packages\\firesharp\\2.0.4\\firesharp.2.0.4.nupkg.sha512",
     "C:\\Users\\Spamm\\.nuget\\packages\\litedb\\4.1.4\\litedb.4.1.4.nupkg.sha512",
@@ -25,6 +26,16 @@
     "C:\\Users\\Spamm\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Le package 'Extended.Wpf.Toolkit 4.3.0' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' au lieu du framework cible du projet 'net5.0-windows7.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
+      "libraryId": "Extended.Wpf.Toolkit",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",

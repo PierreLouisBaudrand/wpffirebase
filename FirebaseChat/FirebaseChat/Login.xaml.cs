@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FirebaseChat.MVVM.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,8 +20,7 @@ namespace FirebaseChat
     /// </summary>
     public partial class Login : Window
     {
-        PageLogin pageLog = new PageLogin();
-        PageRegister pageReg = new PageRegister();
+        int _currentpage = 1;
 
         public Login()
         {
@@ -53,17 +53,19 @@ namespace FirebaseChat
 
         private void GoToLogin_clicked(object sender, RoutedEventArgs e)
         {
-            if (MainLogin.Content != pageLog)
+            if (_currentpage != 1)
             {
-                MainLogin.Content = pageLog;
+                MainLogin.Content = new PageLogin();
+                _currentpage = 1;
             }
         }
 
         private void GoToRegister_clicked(object sender, RoutedEventArgs e)
         {
-            if (MainLogin.Content != pageReg)
+            if (_currentpage != 2)
             {
-                MainLogin.Content = pageReg;
+                MainLogin.Content = new PageRegister();
+                _currentpage = 2;
             }
         }
     }

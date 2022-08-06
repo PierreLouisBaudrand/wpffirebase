@@ -12,6 +12,7 @@ using FireSharp.Config;
 using FireSharp.Response;
 using FireSharp.Interfaces;
 using System.Windows.Threading;
+using System.Windows;
 
 namespace FirebaseChat.MVVM.ViewModel
 {
@@ -22,7 +23,6 @@ namespace FirebaseChat.MVVM.ViewModel
         FirebaseClient firebaseClient;
 
         //Variables
-        public string username = "pierre";
         public RelayCommand SendCommand { get; set; }
 
         private ContactModel _selectedcontact;
@@ -52,19 +52,20 @@ namespace FirebaseChat.MVVM.ViewModel
         }
         public void PostMsgFirebase()
         {
-            if(Message!="")
+            if (CurrentUser.UserName != "")
             {
-                var msg = new MessageModel
+                if (Message != "")
                 {
-                    Username = username,
-                    UsernameColor = "#409aff",
-                    ImageSource = "./Icons/limayraclogo.png",
-                    MessageTxt = Message,
-                    Time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"),
-                    IsNativeOrigin = true,
-                    IsFirstMessage = true
-                };
-                var setter = fclient.Set("Messages/" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), msg);
+                    var msg = new MessageModel
+                    {
+                        Username = CurrentUser.UserName,
+                        UsernameColor = CurrentUser.UsernameColor,
+                        ImageSource = "./Icons/limayraclogo.png",
+                        MessageTxt = Message,
+                        Time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")
+                    };
+                    var setter = fclient.Set("Messages/" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), msg);
+                }
             }
         }
 

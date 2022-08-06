@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FirebaseChat.MVVM.Model;
 
 namespace FirebaseChat
 {
@@ -24,6 +25,9 @@ namespace FirebaseChat
         public MainWindow()
         {
             InitializeComponent();
+            Deconnexion();
+            DeconnexionVisuel();
+            
         }
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -63,8 +67,59 @@ namespace FirebaseChat
 
         private void Connexion_clicked(object sender, RoutedEventArgs e)
         {
-            Login log = new Login();
-            log.ShowDialog();
+            if (CurrentUser.UserName == "")
+            {
+                Login log = new Login();
+                log.ShowDialog();
+                if (CurrentUser.UserName != "")
+                {
+                    ConnexionVisuel();
+                }
+            }
+            else
+            {
+                Deconnexion();
+                DeconnexionVisuel();
+            }
+            
+        }
+        private void ConnexionVisuel()
+        {
+            if (CurrentUser.UserName != "")
+            {
+                UsernameBox.Content = CurrentUser.UserName;
+                ConnectStatus.Content = "Connecté  ";
+                ConnectColor.Background = new SolidColorBrush(Color.FromRgb(59, 255, 111));
+                ConnectButton.Content = "Déconnexion";
+            }
+        }
+        private void DeconnexionVisuel()
+        {
+            if (CurrentUser.UserName == "")
+            {
+                UsernameBox.Content = "Pseudo";
+                ConnectStatus.Content = "Déconnecté";
+                ConnectButton.Content = "Connexion";
+                ConnectColor.Background = new SolidColorBrush(Color.FromRgb(128, 128, 128));
+            }
+        }
+        private static void Deconnexion()
+        {
+            CurrentUser.UserName = "";
+            CurrentUser.PassWord = "";
+            CurrentUser.Mail = "";
+            CurrentUser.UsernameColor = "";
+            CurrentUser.UserKey = "";
+        }
+
+        private void Param_Clicked(object sender, MouseButtonEventArgs e)
+        {
+            if (CurrentUser.UserName != "")
+            {
+                Param param = new Param();
+                param.ShowDialog();
+                ConnexionVisuel();
+            }
         }
     }
 }

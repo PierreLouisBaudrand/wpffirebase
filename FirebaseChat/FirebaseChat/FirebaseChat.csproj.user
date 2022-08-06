@@ -16,6 +16,9 @@
     <Compile Update="Pages\PageRegister.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Param.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Login.xaml">
@@ -28,6 +31,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\PageRegister.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Param.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Themes\ChatItem.xaml">

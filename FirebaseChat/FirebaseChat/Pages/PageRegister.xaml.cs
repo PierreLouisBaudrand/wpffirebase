@@ -25,6 +25,7 @@ namespace FirebaseChat
     /// </summary>
     public partial class PageRegister : Page
     {
+        string _color;
         IFirebaseClient fclient;
         IFirebaseConfig fcon = new FirebaseConfig()
         {
@@ -43,6 +44,11 @@ namespace FirebaseChat
                 Console.WriteLine("il y a eu un problème avec internet");
             }
         }
+        private void ClrPcker_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
+        {
+            var _temp = (Color)e.NewValue;
+            _color = _temp.ToString();
+        }
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
@@ -52,6 +58,7 @@ namespace FirebaseChat
             bool _checkSpe = false;
             bool _mail = false;
             bool _exist = false;
+            string _tempkey;
 
             if (UsernameTxt.Text != "" && PasswordTxt1.Text != "" && PasswordTxt2.Text != "" && MailTxt.Text != "")
             {
@@ -117,20 +124,23 @@ namespace FirebaseChat
                                     {
                                         if (_checkSpe == true)
                                         {
+                                            _tempkey = "U" + DateTime.Now.ToString("yyyyMMddHHmmss");
                                             UserModel user = new UserModel()
                                             {
                                                 UserName = UsernameTxt.Text,
                                                 PassWord = PasswordTxt1.Text,
                                                 Mail = MailTxt.Text,
-                                                UsernameColor = "#404040"
+                                                UsernameColor = _color.Remove(1, 2),
+                                                UserKey = _tempkey
                                             };
 
-                                            var setter = fclient.Set("Users/" + UsernameTxt.Text, user);
+                                            var setter = fclient.Set("Users/" + _tempkey, user);
                                             MessageBox.Show("Utilisateur créé", "Information");
                                             UsernameTxt.Text = "";
                                             PasswordTxt1.Text = "";
                                             PasswordTxt2.Text = "";
                                             MailTxt.Text = "";
+                                            ClrPcker.SelectedColor = (Color)ColorConverter.ConvertFromString("000000FF");
                                         }
                                         else
                                         {

@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FirebaseChat"
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
       mc:Ignorable="d" 
       d:DesignHeight="295" d:DesignWidth="300"
       Title="PageRegister">
@@ -19,44 +20,53 @@
                HorizontalAlignment="Stretch"/>
         <TextBox x:Name="MailTxt"
                      Width="120" Height="20"
-                     TextAlignment="Center"
+                     TextAlignment="Left"
                      Foreground="White"
                      Background="#498bc7"
-                     Margin="30,50,0,0" VerticalAlignment="Top"/>
+                     Margin="50,50,0,0" VerticalAlignment="Top"/>
         <Label Content="Adresse Mail : "
                Foreground="#498bc7" HorizontalAlignment="Left" VerticalAlignment="Top"
                Margin="0,48,0,0"
-               Height="25"/>
-        <TextBox x:Name="UsernameTxt"
-                     Width="90" Height="20"
-                     TextAlignment="Center"
-                     Foreground="White"
-                     Background="#498bc7"
-                     Margin="0,78,0,0" VerticalAlignment="Top"/>
+               Height="24"/>
+        <TextBox x:Name="UsernameTxt" 
+                 Height="20" Width="120"
+                 TextAlignment="Left"
+                 Foreground="White"
+                 Background="#498bc7"
+                 Margin="115,80,65,0" VerticalAlignment="Top"/>
         <Label Content="Nom d'utilisateur : "
                Foreground="#498bc7" HorizontalAlignment="Left" VerticalAlignment="Top"
-               Margin="0,76,0,0"
-               Height="25"/>
-        <TextBox x:Name="PasswordTxt1"
-                     Width="90" Height="20"
-                     TextAlignment="Center"
-                     Foreground="White"
-                     Background="#498bc7"
-                     Margin="0,105,0,0" VerticalAlignment="Top"/>
+               Margin="0,78,0,0"
+               Height="24"/>
+        <TextBox x:Name="PasswordTxt1" 
+                 Height="20" Width="120"
+                 TextAlignment="Left"
+                 Foreground="White"
+                 Background="#498bc7"
+                 Margin="115,110,65,0" VerticalAlignment="Top"/>
         <Label Content="Mot de passe : "
                Foreground="#498bc7" HorizontalAlignment="Left" VerticalAlignment="Top"
-               Margin="0,103,0,0"
-               Height="25"/>
-        <TextBox x:Name="PasswordTxt2"
-                     Width="90" Height="20"
-                     TextAlignment="Center"
-                     Foreground="White"
-                     Background="#498bc7"
-                     Margin="0,133,0,0" VerticalAlignment="Top"/>
+               Margin="0,108,0,0"
+               Height="24"/>
+        <TextBox x:Name="PasswordTxt2" 
+                 Width="120" Height="20"
+                 TextAlignment="Left"
+                 Foreground="White"
+                 Background="#498bc7"
+                 Margin="115,140,65,0" VerticalAlignment="Top"/>
         <Label Content="Confirmation : "
                Foreground="#498bc7" HorizontalAlignment="Left" VerticalAlignment="Top"
-               Margin="0,131,0,0"
-               Height="25"/>
+               Margin="0,138,0,0"
+               Height="24"/>
+        <Label Content="Couleur : "
+               Foreground="#498bc7" HorizontalAlignment="Left" VerticalAlignment="Top"
+               Margin="0,166,0,0"
+               Height="24"/>
+        <xctk:ColorPicker Name="ClrPcker"
+                          VerticalAlignment="Top"
+                          SelectedColorChanged="ClrPcker_SelectedColorChanged"
+                          Height="20" Width="120"
+                          Margin="115,170,65,0"/>
         <Button Height="25" Width="80" VerticalAlignment="Bottom"
                 Margin="0,0,0,20"
                 Background="#6dabe4"

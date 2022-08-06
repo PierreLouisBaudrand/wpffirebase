@@ -12,5 +12,6 @@ namespace FirebaseChat.MVVM.Model
         public string PassWord { get; set; }
         public string Mail { get; set; }
         public string UsernameColor { get; set; }
+        public string UserKey { get; set; }
     }
 }

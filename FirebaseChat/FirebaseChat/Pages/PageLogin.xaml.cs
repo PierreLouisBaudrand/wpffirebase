@@ -49,7 +49,9 @@ namespace FirebaseChat
             string _mail = "";
             string _pswd = "";
             string _username = "";
-            if (MailTxt.Text != "" && PasswordTxt.Text != "")
+            string _usernamecolor = "";
+            string _userkey = "";
+            if (MailTxt.Text != "" && PasswordTxt.Password != "")
             {
                 FirebaseResponse res = fclient.Get("Users/");
                 Dictionary<string, UserModel> data = JsonConvert.DeserializeObject<Dictionary<string, UserModel>>(res.Body.ToString());
@@ -60,16 +62,23 @@ namespace FirebaseChat
                         _mail = item.Value.Mail;
                         _pswd = item.Value.PassWord;
                         _username = item.Value.UserName;
+                        _usernamecolor = item.Value.UsernameColor;
+                        _userkey = item.Value.UserKey;
                         break;
                     }
                 }
                 if (_mail != "")
                 {
-                    if (_pswd == PasswordTxt.Text)
+                    if (_pswd == PasswordTxt.Password)
                     {
                         if (_username != "")
                         {
                             MessageBox.Show("Connecté", "Test");
+                            CurrentUser.Mail = _mail;
+                            CurrentUser.PassWord = _pswd;
+                            CurrentUser.UserName = _username;
+                            CurrentUser.UsernameColor = _usernamecolor;
+                            CurrentUser.UserKey = _userkey;
                         }
                         else
                         {
