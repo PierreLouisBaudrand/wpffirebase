@@ -57,22 +57,27 @@
         </Border>
         <Grid Grid.Row="1" 
               Background="#498bc7">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="9*"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
             <Button Background="#6dabe4" 
                     Width="80" Height="20"
                     BorderThickness="0"
                     Content="Connexion"
                     Foreground="White"
-                    Margin="60,10,130,10" Click="GoToLogin_clicked"/>
+                    HorizontalAlignment="Left"
+                    Margin="10,10,130,10" Click="GoToLogin_clicked"/>
             <Button Background="#6dabe4" 
                     Width="80" Height="20"
                     BorderThickness="0"
                     Content="S'enregistrer"
                     Foreground="White"
-                    Margin="160,10,30,10" Click="GoToRegister_clicked"/>
+                    HorizontalAlignment="Left"
+                    Margin="110,10,30,10" Click="GoToRegister_clicked"/>
+            <Button Background="#6dabe4" 
+                    Width="80" Height="20"
+                    BorderThickness="0"
+                    Content="Récupération"
+                    Foreground="White"
+                    HorizontalAlignment="Left"
+                    Margin="210,10,0,10" Click="GoToRecup_clicked"/>
         </Grid>
         <Border BorderBrush="#236bac" 
                 Grid.Row="2"

@@ -62,3 +62,5 @@ C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\bin\Debug\net5.0-windows\s
 C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\bin\Debug\net5.0-windows\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\obj\Debug\net5.0-windows\Param.g.cs
 C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\obj\Debug\net5.0-windows\Param.baml
+C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\obj\Debug\net5.0-windows\Pages\PageRecup.g.cs
+C:\Users\Spamm\source\repos\FirebaseChat\FirebaseChat\obj\Debug\net5.0-windows\Pages\PageRecup.baml

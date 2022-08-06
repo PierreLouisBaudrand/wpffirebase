@@ -13,5 +13,6 @@ namespace FirebaseChat.MVVM.Model
         public static string Mail { get; set; }
         public static string UsernameColor { get; set; }
         public static string UserKey { get; set; }
+        public static string CodeRecup { get; set; }
     }
 }

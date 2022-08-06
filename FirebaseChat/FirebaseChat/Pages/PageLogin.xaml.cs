@@ -43,7 +43,6 @@ namespace FirebaseChat
                 Console.WriteLine("il y a eu un problème avec internet");
             }
         }
-
         private void Connexion_clicked(object sender, RoutedEventArgs e)
         {
             string _mail = "";
@@ -73,12 +72,16 @@ namespace FirebaseChat
                     {
                         if (_username != "")
                         {
-                            MessageBox.Show("Connecté", "Test");
                             CurrentUser.Mail = _mail;
                             CurrentUser.PassWord = _pswd;
                             CurrentUser.UserName = _username;
                             CurrentUser.UsernameColor = _usernamecolor;
                             CurrentUser.UserKey = _userkey;
+                            var parentWindow = Window.GetWindow((DependencyObject)sender);
+                            if (parentWindow != null)
+                            {
+                                parentWindow.Close();
+                            }
                         }
                         else
                         {

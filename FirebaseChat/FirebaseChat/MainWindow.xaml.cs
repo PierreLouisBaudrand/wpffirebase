@@ -27,7 +27,7 @@ namespace FirebaseChat
             InitializeComponent();
             Deconnexion();
             DeconnexionVisuel();
-            
+            CurrentUser.CodeRecup = "";
         }
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {

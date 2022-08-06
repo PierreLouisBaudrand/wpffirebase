@@ -1,4 +1,5 @@
 ﻿using FirebaseChat.MVVM.Model;
+using FirebaseChat.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,6 +67,15 @@ namespace FirebaseChat
             {
                 MainLogin.Content = new PageRegister();
                 _currentpage = 2;
+            }
+        }
+
+        private void GoToRecup_clicked(object sender, RoutedEventArgs e)
+        {
+            if (_currentpage != 3)
+            {
+                MainLogin.Content = new PageRecup();
+                _currentpage = 3;
             }
         }
     }

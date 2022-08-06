@@ -47,7 +47,7 @@ namespace FirebaseChat
             PasswordTxt1.Text = CurrentUser.PassWord;
             PasswordTxt2.Text = CurrentUser.PassWord;
             //MessageBox.Show(CurrentUser.UsernameColor + "FF");
-            ClrPcker.SelectedColor = (Color)ColorConverter.ConvertFromString(CurrentUser.UsernameColor + "FF");
+            ClrPcker.SelectedColor = (Color)ColorConverter.ConvertFromString(CurrentUser.UsernameColor.Insert(1,"FF"));
         }
         private void ClrPcker_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
         {
