@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Login.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\PageLogin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\PageRecup.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\PageRegister.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Param.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Login.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\PageLogin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\PageRecup.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\PageRegister.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Param.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\ChatItem.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\ContactCard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\MessageBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
