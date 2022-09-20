@@ -230,5 +230,18 @@ namespace FirebaseChat
                 DragMove();
             }
         }
+
+        private void Supp_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (CurrentUser.UserKey != "")
+            {
+                var delete = fclient.Delete("Users/" + CurrentUser.UserKey);
+                MessageBox.Show("L'utilisateur a bien été supprimé", "Information");
+            }
+            else
+            {
+                MessageBox.Show("Erreur d'utilisateur", "Erreur");
+            }
+        }
     }
 }

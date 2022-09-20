@@ -132,6 +132,15 @@
                             Content="Sauvegarder"
                             Foreground="White" 
                             Click="UpdateParam_Click"/>
+                    <Label Content="Supprimer : "
+                           Foreground="#498bc7" HorizontalAlignment="Right"
+                           Margin="0,230,28,0"
+                           Height="24"/>
+                    <Image Height="25" Width="25"
+                           Source="./Icons/param.png"
+                           HorizontalAlignment="Right"
+                           Margin="0,230,10,0"
+                           MouseDown="Supp_MouseDown"/>
                 </Grid>
             </Grid>
         </Border>

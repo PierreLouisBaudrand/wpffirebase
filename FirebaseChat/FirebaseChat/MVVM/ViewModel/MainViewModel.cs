@@ -61,7 +61,7 @@ namespace FirebaseChat.MVVM.ViewModel
             {
                 if (Message != "")
                 {
-                    if (CurrentUser.CodeImage == "")
+                    if (CurrentUser.CodeImage == null)
                     {
                         var msg = new MessageModel
                         {
@@ -86,7 +86,7 @@ namespace FirebaseChat.MVVM.ViewModel
                             HasImage = true
                         };
                         var setter = fclient.Set("Messages/" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), msg);
-                        CurrentUser.CodeImage = "";
+                        CurrentUser.CodeImage = null;
                     }
                 }
             }

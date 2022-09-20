@@ -1372,11 +1372,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Spamm\\source\\repos\\FirebaseChat\\FirebaseChat\\FirebaseChat.csproj",
+      "projectUniqueName": "C:\\Users\\Spamm\\OneDrive\\Bureau\\FirebaseChat\\FirebaseChat\\FirebaseChat.csproj",
       "projectName": "FirebaseChat",
-      "projectPath": "C:\\Users\\Spamm\\source\\repos\\FirebaseChat\\FirebaseChat\\FirebaseChat.csproj",
+      "projectPath": "C:\\Users\\Spamm\\OneDrive\\Bureau\\FirebaseChat\\FirebaseChat\\FirebaseChat.csproj",
       "packagesPath": "C:\\Users\\Spamm\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Spamm\\source\\repos\\FirebaseChat\\FirebaseChat\\obj\\",
+      "outputPath": "C:\\Users\\Spamm\\OneDrive\\Bureau\\FirebaseChat\\FirebaseChat\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Spamm\\AppData\\Roaming\\NuGet\\NuGet.Config",

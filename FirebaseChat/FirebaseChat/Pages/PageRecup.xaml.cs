@@ -87,7 +87,7 @@ namespace FirebaseChat.Pages
                         EnableSsl = true
                     };
                     smtp.Send(mail);
-                    recupmsg.Content = "envoyé";
+                    recupmsg.Content = "code envoyé";
 
                 }
                 catch (Exception ex)
@@ -114,7 +114,32 @@ namespace FirebaseChat.Pages
                             break;
                         }
                     }
-                    PasswordTxt.Text = _pswd;
+                    string FromEmail = "recupmailchatwpf@gmail.com";
+                    string FromPswd = "kfftytczobpgztgo";
+                    CurrentUser.CodeRecup = DateTime.Now.ToString("MMssHH");
+                    try
+                    {
+                        MailMessage mail = new MailMessage();
+                        mail.From = new MailAddress(FromEmail);
+                        mail.To.Add(MailTxt.Text);
+                        mail.Subject = "Récupération de mot de passe";
+                        mail.Body = "<html><body>Votre mot de passe est : " + _pswd + "</body></html>";
+                        mail.IsBodyHtml = true;
+
+                        var smtp = new SmtpClient("smtp.gmail.com")
+                        {
+                            Port = 587,
+                            Credentials = new System.Net.NetworkCredential(FromEmail, FromPswd),
+                            EnableSsl = true
+                        };
+                        smtp.Send(mail);
+                        recupmsg.Content = "mot de passe envoyé";
+
+                    }
+                    catch (Exception ex)
+                    {
+                        recupmsg.Content = ex.Message;
+                    }
                 }
             }
         }
